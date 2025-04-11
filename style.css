@@ -1,7 +1,21 @@
+body, html {
+  height: 100%;
+  margin: 0;
+}
+body {
+  display: flex;
+  justify-content: center; 
+  align-items: center;     
+  background-color: #f0f0f0; 
+  font-family: sans-serif;
+}
 #game {
     font-family: sans-serif;
     text-align: center;
-    margin-top: 100px;
+    background: white;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1); /* Тип 3д немного*/
   }
   #word {
     font-size: 40px;
@@ -9,4 +23,18 @@
   #input {
     font-size: 24px;
     padding: 10px;
+  }
+
+  #wave-banner {
+    position: fixed; /* Чтобы всегда был на своём месте несмотря на прокрутку страницы*/
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Идеально выровнить по центру*/
+    font-size: 48px;
+    color: #00aaff;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.4s, transform 0.4s; /* Плавное появление и уход*/
+    pointer-events: none; /* Чтобы с банером нельзя было никак взаимодействовать*/
+    z-index: 999; /* Чтобы банер был поверх всего (слои)*/
   }
